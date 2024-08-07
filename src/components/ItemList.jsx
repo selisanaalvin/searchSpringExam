@@ -16,7 +16,7 @@ const ItemList = () => {
             <CardMedia
               component="img"
               alt={product.name}
-              height="140"
+              height="100%"
               image={product.thumbnailImageUrl}
             />
             <CardContent>

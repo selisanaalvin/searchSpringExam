@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
-
+import config from '../config'
 export const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
@@ -9,15 +9,13 @@ const SearchProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
-  const siteID = 'scmq7n';
-  const searchSpringApi = `https://${siteID}.a.searchspring.io/api/search/search.json`;
 
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
-      axios.get(searchSpringApi, {
+      axios.get(config.searchSpringApi, {
         params: {
-          siteId: siteID,
+          siteId: config.siteID,
           q: searchQuery,
           resultsFormat: 'native',
           page: currentPage,

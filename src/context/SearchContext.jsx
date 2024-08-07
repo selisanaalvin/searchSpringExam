@@ -9,13 +9,14 @@ const SearchProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
-
+  const siteID = 'scmq7n';
+  
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
-      axios.get('https://scmq7n.a.searchspring.io/api/search/search.json', {
+      axios.get(`https://${siteID}.a.searchspring.io/api/search/search.json`, {
         params: {
-          siteId: 'scmq7n',
+          siteId: siteID,
           q: searchQuery,
           resultsFormat: 'native',
           page: currentPage,

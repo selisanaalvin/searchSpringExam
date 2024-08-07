@@ -13,7 +13,7 @@ const SearchProvider = ({ children }) => {
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
-      axios.get('http://api.searchspring.net/api/search/search.json', {
+      axios.get('https://scmq7n.a.searchspring.io/api/search/search.json', {
         params: {
           siteId: 'scmq7n',
           q: searchQuery,

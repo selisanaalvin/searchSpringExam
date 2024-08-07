@@ -10,11 +10,12 @@ const SearchProvider = ({ children }) => {
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const siteID = 'scmq7n';
-  
+  const searchSpringApi = `https://${siteID}.a.searchspring.io/api/search/search.json`;
+
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
-      axios.get(`https://${siteID}.a.searchspring.io/api/search/search.json`, {
+      axios.get(searchSpringApi, {
         params: {
           siteId: siteID,
           q: searchQuery,

@@ -5,6 +5,25 @@ import { SearchContext } from '../context/SearchContext';
 import PaginationComponent from './PaginationComponent';
 import 'animate.css';
 
+const styles = {
+  button3d: {
+    position: 'absolute', 
+    top: 8, 
+    right: 8, 
+    backgroundColor: '#3a23ad', 
+    color: 'white',
+    padding: '10px',
+    borderRadius: '100%',
+    transition: 'all 0.1s ease-in-out',
+    boxShadow: '0px 6px 0px #2e1d92',
+    border: '2px solid #ffff', 
+  },
+  button3dHover: {
+    backgroundColor: 'rgba(58, 35, 173, 0.8)',
+    boxShadow: '0px 8px 0px #3a23ad',  
+  },
+};
+
 const ItemList = () => {
   const { apiResponse } = useContext(SearchContext);
 
@@ -48,24 +67,17 @@ const ItemList = () => {
                     ${product.msrp}
                   </Typography>
                 )}
-                <IconButton
-                  color="primary"
+                
+                <button
                   aria-label="add to cart"
-                  sx={{
-                    position: 'absolute',
-                    top: 8,
-                    right: 8,
-                    backgroundColor: '#3a23ad',
-                    color: 'white',
-                    '&:hover': {
-                      backgroundColor: '#2e1d92',
-                    },
-                    borderRadius: '50%',
-                    padding: '10px',
-                  }}
+                  style={styles.button3d}
+                  onMouseDown={(e) => e.currentTarget.style.boxShadow = styles.button3dActive.boxShadow}
+                  onMouseUp={(e) => e.currentTarget.style.boxShadow = styles.button3d.boxShadow}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(58, 35, 173, 0.8)'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = styles.button3d.backgroundColor}
                 >
                   <AddShoppingCartIcon />
-                </IconButton>
+                </button>
               </CardContent>
             </Card>
           </Grid>

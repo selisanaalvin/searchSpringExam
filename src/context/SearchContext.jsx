@@ -9,7 +9,8 @@ const SearchProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [cartCount, setCartCount] = useState(10);
   const [apiResponse, setApiReponse] = useState([]);
-
+  const [sort, setSort] = useState(null)
+  const [perPage, setPerPage] = useState(24)
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
@@ -19,6 +20,9 @@ const SearchProvider = ({ children }) => {
           q: searchQuery,
           resultsFormat: 'native',
           page: currentPage,
+          resultsPerPage: perPage,
+          ...(sort ? { [`sort.${sort?.field}`]:`${sort.direction} `}: {}),
+          
         },
       })
       .then(response => {
@@ -31,7 +35,7 @@ const SearchProvider = ({ children }) => {
         setLoading(false);
       });
     }
-  }, [searchQuery, currentPage]);
+  }, [searchQuery, currentPage, sort, perPage]);
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= apiResponse.pagination.totalPages) {
@@ -50,6 +54,8 @@ const SearchProvider = ({ children }) => {
         cartCount,
         searchQuery,
         apiResponse,
+        setSort,
+        setPerPage,
       }}
     >
       {children}

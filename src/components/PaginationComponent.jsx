@@ -3,7 +3,7 @@ import { Box, Pagination } from '@mui/material';
 import { SearchContext } from '../context/SearchContext';
 
 const PaginationComponent = () => {
-  const { apiResponse, currentPage, totalPages, handlePageChange } = useContext(SearchContext);
+  const { apiResponse, currentPage, handlePageChange } = useContext(SearchContext);
   return (
     <Box mt={2} display="flex" justifyContent="center">
       {apiResponse.results?.length > 0 && <Pagination

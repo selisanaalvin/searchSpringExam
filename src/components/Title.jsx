@@ -9,7 +9,7 @@ const styles = {
   title: {
     fontSize: '18px',
     fontWeight: 'bold',
-    color: '#333',
+    color: '#3a23ad',
   },
 };
 

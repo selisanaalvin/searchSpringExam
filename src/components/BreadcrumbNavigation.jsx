@@ -9,8 +9,8 @@ const styles = {
     padding: '150px 100px 10px 20px',
   },
   breadcrumbHome: {
-    fontSize: '17px', // Adjust font size as needed
-    color: '#3a23ad', // Optional: Adjust text color
+    fontSize: '17px', 
+    color: '#3a23ad',
   }, 
 
 };

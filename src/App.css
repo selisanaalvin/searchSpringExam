@@ -42,19 +42,19 @@ html {
   right: 20px;
   z-index: 1000;
   display: none;
-  width: 50px; /* Adjust width and height for circular shape */
+  width: 50px; 
   height: 50px;
-  background-color: #007bff; /* Button background color */
-  border-radius: 50%; /* Make it circular */
-  border: none; /* Optional: Remove default button border */
+  background-color: #007bff;
+  border-radius: 50%;
+  border: none;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: Add shadow */
-  color: white; /* Icon color */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .page-scroller i {
   display: block;
-  font-size: 24px; /* Adjust icon size */
-  margin: auto; /* Center the icon vertically and horizontally */
-  line-height: 50px; /* Match the button height for vertical centering */
+  font-size: 24px;
+  margin: auto;
+  line-height: 50px;
 }

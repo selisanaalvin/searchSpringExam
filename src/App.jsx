@@ -3,6 +3,8 @@ import SearchProvider from './context/SearchContext';
 import Header from './components/Header';
 import NaviagtorTabs from './components/NaviagtorTabs'
 import Title from './components/Title'
+import BackToTopButton from './components/BackToTopBtn';
+import FilterOptions from './components/FilterOption';
 import { Container, CssBaseline, Box, CircularProgress } from '@mui/material';
 const ShopingPage = lazy(() => import('./pages/ShopingPage'));
 import './App.css'; 
@@ -26,10 +28,12 @@ const App = () => {
             <Header />
             <NaviagtorTabs/>
             <Title/>
+            <FilterOptions/>
             <Box display="flex" flexDirection="column" alignItems="center" my={12}>
             <Suspense fallback={<CircularProgress />}>
               <ShopingPage />
             </Suspense>
+            <BackToTopButton/>
           </Box>
         </Container>
       </SearchProvider>

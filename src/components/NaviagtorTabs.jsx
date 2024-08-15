@@ -6,12 +6,12 @@ import BreadcrumbNavigation from './BreadcrumbNavigation';
 
 const styles = {
   tabsContainer: {
-    width: '100vw', // Ensure full width of the viewport
-    backgroundColor: '#3a23ad', // Background color of the navbar
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', // Optional: Add a subtle shadow
-    position: 'absolute', // Optional: Fix the navbar at the top of the page
+    width: '100vw', 
+    backgroundColor: '#3a23ad',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    position: 'absolute',
     left: 0,
-    zIndex: 1200, // Ensure the navbar is above other content
+    zIndex: 1200,
     padding: '20px',
   },
   tabs: {
@@ -19,26 +19,26 @@ const styles = {
     flexDirection: 'row',
     overflowX: 'auto',
     WebkitOverflowScrolling: 'touch',
-    backgroundColor: '#3a23ad', // Set background color for the tab area
-    padding: '0 16px', // Optional: Add padding if needed
+    backgroundColor: '#3a23ad',
+    padding: '0 16px',
   },
   tab: {
-    minWidth: '120px', // Default min width for desktop
+    minWidth: '120px',
     flex: 1,
     textAlign: 'center',
     padding: '12px',
-    color: '#ffffff', // Text color for tabs
-    fontWeight: 'bold', // Make text bold
-    fontSize: '16px', // Adjust font size as needed
+    color: '#ffffff',
+    fontWeight: 'bold',
+    fontSize: '16px',
     '&.Mui-selected': {
-      color: '#ffffff', // Color for the selected tab text
+      color: '#ffffff',
     },
   },
   indicator: {
-    backgroundColor: '#00cee1', // Color of the indicator line
+    backgroundColor: '#00cee1',
   },
   content: {
-    marginTop: '80px', // Adjust margin to avoid overlap with the fixed navbar
+    marginTop: '80px',
   },
 };
 

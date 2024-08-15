@@ -60,7 +60,7 @@ const NavigationTabs = () => {
   };
 
   return (
-    <Box>
+    <Box className="ss-nav-bar">
       <Box sx={styles.tabsContainer}>
         <Tabs
           value={value}

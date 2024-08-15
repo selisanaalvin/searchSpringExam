@@ -5,6 +5,7 @@ import NaviagtorTabs from './components/NaviagtorTabs'
 import Title from './components/Title'
 import BackToTopButton from './components/BackToTopBtn';
 import FilterOptions from './components/FilterOption';
+import HamburgerMenu from './components/Hamburger';
 import { Container, CssBaseline, Box, CircularProgress } from '@mui/material';
 const ShopingPage = lazy(() => import('./pages/ShopingPage'));
 import './App.css'; 
@@ -25,6 +26,7 @@ const App = () => {
       <SearchProvider>
         <CssBaseline />
         <Container maxWidth="lg">
+          <HamburgerMenu/>
             <Header />
             <NaviagtorTabs/>
             <Title/>

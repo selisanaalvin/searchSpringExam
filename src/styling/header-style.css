@@ -22,6 +22,10 @@
     justify-content: flex-end;
 }
 
+.ss-nav-bar {
+    display: block;
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -43,5 +47,8 @@
   
     .ss-searchtextfield, .ss-search-box {
         width: 100%;
+    }
+    .ss-nav-bar {
+        display: none;
     }
 }

@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900&display=swap");
+
+:root {
+    --ff-primary: 'Roboto', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #1976d2;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25), 0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+/* Container for hamburger and nav */
+.hamburger-header {
+    justify-content: space-between;
+    padding: 1em;
+    display: none;
+}
+
+/* Nav menu styling */
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h2);
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+/* Hamburger button styling */
+.nav-toggle {
+    padding: 0.25em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+/* Open state for nav */
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .my-hamburger {
+    transform: rotate(0.625turn);
+}
+
+.nav-open .my-hamburger::before {
+    transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .my-hamburger::after {
+    opacity: 0;
+}
+
+/* Hamburger styles */
+.my-hamburger {
+    display: block;
+    position: relative;
+}
+
+.my-hamburger,
+.my-hamburger::before,
+.my-hamburger::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.my-hamburger::before,
+.my-hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.my-hamburger::before {
+    top: 6px;
+}
+
+.my-hamburger::after {
+    bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    
+    .hamburger-header {
+        display: flex;
+    }
+}

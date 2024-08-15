@@ -1,4 +1,3 @@
-// components/Title.js
 import React , {useContext, useEffect, useState  } from 'react';
 import { Box, Typography } from '@mui/material';
 import { SearchContext } from '../context/SearchContext';
@@ -14,7 +13,7 @@ const styles = {
 };
 
 const Title = () => {
-    const { apiResponse} = useContext(SearchContext); 
+    const { apiResponse } = useContext(SearchContext); 
     const [pagination, setPagination] = useState([]);
 
     useEffect(() => {

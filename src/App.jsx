@@ -6,6 +6,7 @@ import Title from './components/Title'
 import BackToTopButton from './components/BackToTopBtn';
 import FilterOptions from './components/FilterOption';
 import HamburgerMenu from './components/Hamburger';
+import Footer from './components/Footer';
 import { Container, CssBaseline, Box, CircularProgress } from '@mui/material';
 const ShopingPage = lazy(() => import('./pages/ShopingPage'));
 import './App.css'; 
@@ -36,6 +37,7 @@ const App = () => {
               <ShopingPage />
             </Suspense>
             <BackToTopButton/>
+            <Footer/>
           </Box>
         </Container>
       </SearchProvider>

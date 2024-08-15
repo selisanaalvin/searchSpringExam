@@ -5,10 +5,10 @@ export const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [cartCount, setCartCount] = useState(10);
+  const [apiResponse, setApiReponse] = useState([]);
 
   useEffect(() => {
     if (searchQuery) {
@@ -22,8 +22,8 @@ const SearchProvider = ({ children }) => {
         },
       })
       .then(response => {
-        setProducts(response.data.results || []);
-        setTotalPages(response.data.pagination.totalPages || 0);
+        setApiReponse(response.data);
+        console.log('products', response.data)
         setLoading(false);
       })
       .catch(error => {
@@ -34,7 +34,7 @@ const SearchProvider = ({ children }) => {
   }, [searchQuery, currentPage]);
 
   const handlePageChange = (page) => {
-    if (page > 0 && page <= totalPages) {
+    if (page > 0 && page <= apiResponse.pagination.totalPages) {
       setCurrentPage(page);
     }
   };
@@ -42,13 +42,14 @@ const SearchProvider = ({ children }) => {
   return (
     <SearchContext.Provider
       value={{
-        products,
         currentPage,
-        totalPages,
         loading,
         setSearchQuery,
         setCurrentPage,
         handlePageChange,
+        cartCount,
+        searchQuery,
+        apiResponse,
       }}
     >
       {children}

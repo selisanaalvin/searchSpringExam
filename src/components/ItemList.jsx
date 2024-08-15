@@ -4,13 +4,13 @@ import { SearchContext } from '../context/SearchContext';
 import PaginationComponent from './PaginationComponent';
 
 const ItemList = () => {
-  const { products } = useContext(SearchContext);
+  const { apiResponse } = useContext(SearchContext);
   return (
     <>
     <PaginationComponent/>
     <Grid container spacing={2}>
     
-      {products.map((product) => (
+      {apiResponse?.results.map((product) => (
         <Grid item xs={12} sm={6} md={4} key={product.id}>
           <Card>
             <CardMedia

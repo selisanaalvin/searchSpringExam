@@ -3,6 +3,13 @@ import { Tabs, Tab, Box } from '@mui/material';
 import { SearchContext } from '../context/SearchContext';
 import config from '../config';
 import BreadcrumbNavigation from './BreadcrumbNavigation';
+import NewReleasesIcon from '@mui/icons-material/NewReleases';
+import DressIcon from '@mui/icons-material/Checkroom';  
+import ShoesIcon from '@mui/icons-material/IceSkating';  
+import TopAccessIcon from '@mui/icons-material/Hiking';  
+import AccessoriesIcon from '@mui/icons-material/Watch';  
+import SalesIcon from '@mui/icons-material/LocalOffer'; 
+
 
 const styles = {
   tabsContainer: {
@@ -42,6 +49,15 @@ const styles = {
   },
 };
 
+const tabIcons = {
+  'New Arrivals': <NewReleasesIcon />,
+  'Dresses': <DressIcon />,
+  'Shoes': <ShoesIcon />,
+  'Tops': <TopAccessIcon />,
+  'Accessories': <AccessoriesIcon />,
+  'Sales': <SalesIcon />,
+};
+
 const NavigationTabs = () => {
   const NavigationList = config.NavigationList;
   const { setSearchQuery, setCurrentPage } = useContext(SearchContext);
@@ -70,7 +86,9 @@ const NavigationTabs = () => {
           TabIndicatorProps={{ sx: styles.indicator }}
         >
           {NavigationList.map((item) => (
-            <Tab key={item.value} label={item.label} sx={styles.tab} value={item.value} />
+            <Tab key={item.value} label={item.label} sx={styles.tab} value={item.value} 
+            icon={tabIcons[item.value]}
+            iconPosition="start"  />
           ))}
         </Tabs>
       </Box>
